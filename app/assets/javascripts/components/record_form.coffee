@@ -6,7 +6,7 @@
   handleSubmit: (e) ->
     e.preventDefault()
     $.post '', { record: @state }, (data) =>
-      @props.handlerNewRecord data
+      @props.handleNewRecord data
       @setState @getInitialState()
     , 'JSON'
   render: ->
@@ -48,6 +48,5 @@
   handleChange: (e) ->
     name = e.target.name
     @setState "#{name}": e.target.value
-    console.log(e.target.value)
   valid: ->
     @state.title && @state.date && @state.amount
